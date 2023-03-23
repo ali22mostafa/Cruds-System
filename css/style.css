@@ -1,0 +1,33 @@
+.img-cont{
+width: 50%;
+    min-height: 100px;
+    margin: auto;
+    
+}
+
+body{
+    background-color: #fde1ca;
+}
+.spe-color{
+    background-color: #e6dacc;
+    border-radius: 20px;
+}  
+
+.form-control{
+    background-color:#fde1c9 ;
+
+}
+.form-control:focus{
+    color: #3b8dbd;
+    background-color:#fde1c9;
+    
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:767px) {
+    .img-cont{
+        object-fit: cover;
+        width: 100%;
+    }
+    
+}

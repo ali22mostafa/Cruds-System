@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/CRUD.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>CRUD System</title>
+</head>
+<body>
+
+<div class="container-fluid bg-img py-3">
+  <div class="bg-danger img-cont">
+    <img src="img/CRUD.jpeg" class="w-100" alt="">
+  
+  </div>
+</div>
+
+
+
+  <div class="container py-5 spe-color">
+    <!-- product name -->
+    <div class="mb-3">
+      <label for="ProductName">Product Name</label>
+      <input type="text" class="form-control mt-2" id="ProductName">
+    <h6 class="alert alert-danger mt-2 d-none d-flex justify-content-between align-items-center" id="alertName">
+    <small>Enter Valid name</small>
+    <small >First Char is capital</small>  
+    </h6>
+    </div>
+<!-- product price -->
+    <div class="mb-3">
+      <label for="ProductPrice">Product Price</label>
+      <input type="number" class="form-control mt-2" id="ProductPrice">
+      <h6 class="alert alert-danger mt-2 d-none " id="alertPrice">
+        <small>Enter Valid name</small>
+        
+        </h6>
+    </div>
+<!-- product Category -->
+    <div class="mb-3">
+      <label for="ProductCategory">Product Category</label>
+      <input  id="ProductCategory" class="form-control mt-2">
+      <h6 class="alert alert-danger mt-2 d-none d-flex justify-content-between align-items-center" id="alertCategory">
+        <small>Enter Valid name</small>
+        <small >First Char is capital</small>  
+        </h6>
+        
+      </input>
+    </div>
+<!-- product Description -->
+    <div class="mb-3">
+      <label for="ProductDescription">Product Description</label>
+      <textarea type="text" class="form-control mt-2" id="ProductDescription">
+       
+        </textarea>
+        <h6 class="alert alert-danger mt-2 d-none d-flex justify-content-between align-items-center" id="alertDesc">
+          <small>Enter Valid name</small>
+          <small >all Char is small</small>  
+          </h6>
+    </div>
+
+
+    <button  onclick="addProduct()" class="btn btn-outline-info" id="Add"> Add Product</button>
+    <button   class="btn btn-outline-info" style="display: none;" id="Edit" onclick="addEdit(currentInd)"> Add Edit</button>
+    <button class="btn btn-outline-danger ms-2" onclick="clearForm()"> Clear Form</button>
+  </div>
+  <div class="container ">
+    <input type="text" onkeyup="searchProduct(this.value)" placeholder="Search By Name....." class="form-control w-50 mx-auto my-5">
+    <table class="table table-striped table-bordered text-center  ">
+      <thead class="spe-color">
+        <tr>
+          <th>Id</th>
+          <th> Name</th>
+          <th> Price</th>
+          <th> Category</th>
+          <th> Description</th>
+          <th>Update</th>
+          <th>Delete</th>
+          
+        </tr>
+      </thead>
+      <tbody id="data">
+        
+        
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
