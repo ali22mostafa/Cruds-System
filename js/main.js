@@ -12,7 +12,7 @@ if(localStorage.getItem("ourProduct")!=null){
 }
 // fun that add product
 function addProduct(){
-    if (validateName()==true &&validatePrice()==true &&validateCategory()==true &&validateDescription()==true) {
+    if (validateName()==true &&validatePrice()==true &&validateCategory()==true &&validateDescription()==true && isFind()==true) {
         var product={
             name:ProductName.value,
             price:ProductPrice.value,
@@ -98,7 +98,7 @@ function updateProduct(ind) {
 }
 // updata data
 function addEdit(currentInd) {
-    if (validateName()==true &&validatePrice()==true &&validateCategory()==true &&validateDescription()==true){
+    if (validateName()==true &&validatePrice()==true &&validateCategory()==true &&validateDescription()==true && isFind()==true){
         productList[currentInd].name=ProductName.value
         productList[currentInd].price=ProductPrice.value
         productList[currentInd].category=ProductCategory.value
@@ -123,7 +123,7 @@ ProductName.addEventListener("blur",validateName)
 
 function validateName() {
     
-    let reg=/^([A-Z]|[a-z]){3,7}( )?([A-Za-z]{3,7})?$/
+    let reg=/^([A-Z]|[a-z]){2,7}( )?([A-Za-z]{3,7})?$/
     if (reg.test(ProductName.value)==true) {
         document.getElementById("alertName").classList.replace("d-block","d-none")
        return true
@@ -186,3 +186,28 @@ function validateDescription() {
     
 }
 
+
+// prduct is exist
+function isFind() {
+    
+    let result=productList.find((el)=>{
+    
+         return  el.name == ProductName.value 
+    })
+    
+    
+    if ( result == undefined) {
+    
+       
+        document.getElementById("existIs").classList.replace("d-block","d-none")
+        return true 
+    }
+    else{
+        
+     
+        document.getElementById("existIs").classList.replace("d-none","d-block")
+        return false
+    }
+    
+    
+    }
