@@ -123,7 +123,7 @@ ProductName.addEventListener("blur",validateName)
 
 function validateName() {
     
-    let reg=/^[A-Z][a-z]{2,7}( )?([A-Za-z]{3,7})?$/
+    let reg=/^([A-Z]|[a-z]){3,7}( )?([A-Za-z]{3,7})?$/
     if (reg.test(ProductName.value)==true) {
         document.getElementById("alertName").classList.replace("d-block","d-none")
        return true
@@ -156,7 +156,7 @@ ProductCategory.addEventListener("blur",validateCategory)
 
 function validateCategory() {
     
-    let reg=/^[A-Z][a-z]{1,7}( )?([A-Za-z]{3,7})?$/
+    let reg=/^([A-Z]|[a-z]){2,7}( )?([A-Za-z]{3,7})?$/
     if (reg.test(ProductCategory.value)==true) {
         document.getElementById("alertCategory").classList.replace("d-block","d-none")
        return true
@@ -172,7 +172,7 @@ ProductDescription.addEventListener("blur",validateDescription)
 
 function validateDescription() {
     
-    let reg=/^([A-Z]|[a-z]| |-|_|@|#){3,100}$/
+    let reg=/^[a-z ]{3,100}$/
     if (reg.test(ProductDescription.value)==true) {
         console.log(ProductDescription.value);
         document.getElementById("alertDesc").classList.replace("d-block","d-none")
